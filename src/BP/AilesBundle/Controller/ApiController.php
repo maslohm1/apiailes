@@ -642,12 +642,12 @@ public function internationalNewsAction(){
         header("Access-Control-Allow-Origin: *");
         $response = array("status"=>"OK", "result"=>"200", "content" =>
             array(
-                array("name"=>"Restaurant","icon"=>"http://41.250.250.20:1937/boAppMobile/images/restaurant.png"),
-                array("name"=>"Hopital","icon"=>"http://41.250.250.20:1937/boAppMobile/images/hospital.png"),
-                array("name"=>"Station d'essence","icon"=>"http://41.250.250.20:1937/boAppMobile/images/gas_station.png"),
-                array("name"=>"Cinema","icon"=>"http://41.250.250.20:1937/boAppMobile/images/cinema.png"),
-                array("name"=>"Centres commerciaux","icon"=>"http://41.250.250.20:1937/boAppMobile/images/shop.png"),
-                array("name"=>"Pharmacie","icon"=>"http://41.250.250.20:1937/boAppMobile/images/pharmacy.png")
+                array("name"=>"Restaurant","icon"=>"http://simo.2wls.com/boAppMobile/images/restaurant.png"),
+                array("name"=>"Hopital","icon"=>"http://simo.2wls.com/boAppMobile/images/hospital.png"),
+                array("name"=>"Station d'essence","icon"=>"http://simo.2wls.com/boAppMobile/images/gas_station.png"),
+                array("name"=>"Cinema","icon"=>"http://simo.2wls.com/boAppMobile/images/cinema.png"),
+                array("name"=>"Centres commerciaux","icon"=>"http://simo.2wls.com/boAppMobile/images/shop.png"),
+                array("name"=>"Pharmacie","icon"=>"http://simo.2wls.com/boAppMobile/images/pharmacy.png")
                 
                 )
             );
