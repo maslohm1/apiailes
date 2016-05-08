@@ -147,7 +147,7 @@ public function internationalNewsAction(){
         
         header("Access-Control-Allow-Origin: *");
          header("Access-Control-Allow-Origin: *");
-        $url = "http://www.telecontact.ma/services/pharmacies-de-garde/casablanca-Maroc";
+        $url = $_GET["url"];
         $doctrine = $this->getDoctrine();
         
         $response = array();
