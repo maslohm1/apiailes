@@ -665,7 +665,7 @@ public function internationalNewsAction(){
         header("Access-Control-Allow-Origin: *");
         $doctrine = $this->getDoctrine();
         
-        $pois = $doctrine->getRepository('wlsTitaniumBundle:Geoloc')
+        $pois = $doctrine->getRepository('BPAilesBundle:Geoloc')
                                                     ->getPOIS(addslashes($category),$latitude,$longitude);
         
         $serializer = new Serializer(array(new GetSetMethodNormalizer()), array('json' => new 
