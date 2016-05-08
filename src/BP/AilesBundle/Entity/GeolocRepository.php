@@ -1,6 +1,6 @@
 <?php
 
-namespace wls\TitaniumBundle\Entity;
+namespace BP\AilesBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 

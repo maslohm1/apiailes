@@ -1,6 +1,6 @@
 <?php
 
-namespace wls\TitaniumBundle\Entity;
+namespace BP\AilesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Geoloc
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="wls\TitaniumBundle\Entity\GeolocRepository")
+ * @ORM\Entity(repositoryClass="BP\AilesBundle\Entity\GeolocRepository")
  */
 class Geoloc
 {
