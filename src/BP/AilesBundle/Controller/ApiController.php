@@ -61,7 +61,7 @@ public function internationalNewsAction(){
         return $response;
     }
     
-  /*  public function trainAction($depart, $arrivee, $day, $month, $year){
+  public function trainAction($depart, $arrivee, $day, $month, $year){
         
         header("Access-Control-Allow-Origin: *");
         $doctrine = $this->getDoctrine();
@@ -103,7 +103,7 @@ public function internationalNewsAction(){
         $response->headers->set('Content-Type', 'application/json');
         return $response;
         
-    } */
+    } 
     
     public function villePharmaAction()
     {
