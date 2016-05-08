@@ -146,7 +146,7 @@ public function internationalNewsAction(){
     public function PharmacieAction(){
         
          header("Access-Control-Allow-Origin: *");
-        $url = "http://www.telecontact.ma/services/pharmacies-de-garde/casablanca-Maroc";
+        $url = $_GET["url"];
         $doctrine = $this->getDoctrine();
         
         $response = array();
@@ -191,28 +191,27 @@ public function internationalNewsAction(){
 				'phone'   => $phones[ $offset ],
 			];
 		}
-        /*$rows = $xp->query('//div[@class="pharmacies_elements_cls"]');
-        $i = 0;
-        $content = array();
-        foreach($rows as $row){
+		
+		
+        // $rows = $xp->query('//div[@class="pharmacies_elements_cls"]');
+        // $i = 0;
+        // $content = array();
+        // foreach($rows as $row) {
              
-            $content[] = array("title"=> utf8_decode($row->getElementsByTagName("div")->item(0)->getElementsByTagName("span")->item(0)->nodeValue),
-                            "address"=>  utf8_decode($row->getElementsByTagName("div")->item(0)->getElementsByTagName("span")->item(1)->nodeValue),
-                            "phone"=>$row->getElementsByTagName("div")->item(1)->getElementsByTagName("div")->item(0)->nodeValue);
-
-        } */
+            // $content[] = array("title"=> utf8_decode($row->getElementsByTagName("div")->item(0)->getElementsByTagName("span")->item(0)->nodeValue),
+            //                "address"=>  utf8_decode($row->getElementsByTagName("div")->item(0)->getElementsByTagName("span")->item(1)->nodeValue),
+            //                "phone"=>$row->getElementsByTagName("div")->item(1)->getElementsByTagName("div")->item(0)->nodeValue);
+			//
+        // }
      
         $response = array("status"=>"OK","result"=>200,"content"=>$content);
-           $serializer = new Serializer(array(new GetSetMethodNormalizer()), array('json' => new JsonEncoder()));
+        $serializer = new Serializer(array(new GetSetMethodNormalizer()), array('json' => new JsonEncoder()));
         $responseJson = $serializer->serialize($response, 'json');
         
         $response = new Response();
         $response->setContent($responseJson);
         $response->headers->set('Content-Type', 'application/json');
         return $response;
-        
-        
-            
            
         }
         
