@@ -1,0 +1,92 @@
+bp_ailes_login:
+    path:     /login/{rib}
+    defaults: { _controller: BPAilesBundle:Api:login }
+    
+bp_ailes_profil:
+    path:     /profil/{rib}
+    defaults: { _controller: BPAilesBundle:Api:profil}    
+    
+bp_ailes_modifeProfil:
+    path:     /updateprofil/{rib}/{titre}/{intitule}/{sigle}/{dtNais}/{gsm}/{mail}
+    defaults: { _controller: BPAilesBundle:Api:updateprofil}    
+    
+bp_ailes_beaute:
+    path:     /beaute
+    defaults: { _controller: BPAilesBundle:Api:beaute}
+    
+bp_ailes_articlebeaute:
+    path:     /articlebeaute
+    defaults: { _controller: BPAilesBundle:Api:articleBeaute}    
+    
+bp_ailes_mode:
+    path:     /mode
+    defaults: { _controller: BPAilesBundle:Api:mode}   
+    
+bp_ailes_articlemode:
+    path:     /articlemode
+    defaults: { _controller: BPAilesBundle:Api:articleMode}
+    
+bp_ailes_cuisine:
+    path:     /cuisine
+    defaults: { _controller: BPAilesBundle:Api:cuisine} 
+    
+bp_ailes_articlecuisine:
+    path:     /articlecuisine
+    defaults: { _controller: BPAilesBundle:Api:articleCuisine}    
+    
+bp_ailes_sante:
+    path:     /sante
+    defaults: { _controller: BPAilesBundle:Api:sante} 
+    
+bp_ailes_articlesante:
+    path:     /articlesante
+    defaults: { _controller: BPAilesBundle:Api:articleSante} 
+    
+bp_ailes_pharmacie:
+    path:     /pharmacie
+    defaults: { _controller: BPAilesBundle:Api:Pharmacie} 
+    
+bp_ailes_villepharmacie:
+    path:     /villepharmacie
+    defaults: { _controller: BPAilesBundle:Api:villePharma} 
+    
+bp_ailes_train:
+    path:     /train/{depart}/{arrivee}/{day}/{month}/{year}
+    defaults: { _controller: BPAilesBundle:Api:train}   
+    
+bp_ailes_nationalNews:
+    path:     /nationalNews
+    defaults: { _controller: BPAilesBundle:Api:nationalNews }
+    
+bp_ailes_internationalNews:
+    path:     /internationalNews
+    defaults: { _controller: BPAilesBundle:Api:internationalNews }
+    
+bp_ailes_transaction:
+    path:     /transaction/{rib}
+    defaults: { _controller: BPAilesBundle:Api:transaction }
+    
+bp_ailes_partenaire:
+    path:     /partenaire
+    defaults: { _controller: BPAilesBundle:Api:partenaire } 
+    
+bp_ailes_poisCategories:
+    path:     /poiscategories
+    defaults: { _controller: BPAilesBundle:Api:poisCategories }
+    
+bp_ailes_pois:
+    path:     /pois/{category}/{latitude}/{longitude}
+    defaults: { _controller: BPAilesBundle:Api:pois }
+    
+bp_ailes_bladi:
+    path:     /bladi
+    defaults: { _controller: BPAilesBundle:Api:bladi   }
+    
+bp_ailes_dom:
+    path:     /dom
+    defaults: { _controller: BPAilesBundle:Api:url   }    
+    
+bp_ailes_cashback:
+    path:     /cashback/{rib}/{year}/{month}
+    defaults: { _controller: BPAilesBundle:Api:cashback , month:default , year:default } 
+    

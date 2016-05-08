@@ -2,12 +2,49 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        
+        <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">
+        <link href="{{ asset('bootstrap/css/style.css') }}" rel="stylesheet">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="container-fluid">
+            <div class="header">
+                <img class="right logo" src="{{ asset('images/mastercard_logo.png') }}" alt="MASTERcard" />
+            </div>
+                <div class="clear"></div>
+            <div class="row">
+                <div class="col-md-9 col-md-push-3">
+                    {% block body %}{% endblock %}
+                </div>
+                <div class="col-md-3 col-md-pull-9 menu">
+                    <ul style="max-width: 300px;" class="nav nav-pills nav-stacked">
+                        <li class="active" role="presentation"><a href="#">Home</a></li>
+                        <li role="presentation"><a href="{{ path('partenaires') }}">Partenaires</a></li>
+                        <li role="presentation"><a href="{{ path('anepasraters') }}">A ne pas rater</a></li>
+                        <li role="presentation"><a href="{{ path('nouveaute') }}">Nouveauté</a></li>
+                        <li role="presentation"><a href="#">Utilisateur</a></li>
+                        <li role="presentation"><a href="#">Logout</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{{ asset('bootstrap/js/jquery.min.js') }}"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+        <!-- Place inside the <head> of your HTML -->
+         <script type="text/javascript" src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea"
+ });
+</script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

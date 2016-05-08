@@ -1,0 +1,12 @@
+bp_ailes_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BPAilesBundle:Default:index }
+    
+bp_ailes_api:
+    resource: "@BPAilesBundle/Resources/config/routing/api.yml"
+    prefix:   /api
+    
+
+    
+    
+

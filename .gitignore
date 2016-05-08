@@ -9,3 +9,8 @@
 /composer.phar
 /vendor/
 /web/bundles/
+target
+.settings/*
+!.settings/.jsdtscope
+.project
+.classpath

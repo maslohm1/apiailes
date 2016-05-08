@@ -1,0 +1,72 @@
+Membres:
+    type: entity
+    table: Membres
+    uniqueConstraints:
+        RIB:
+            columns:
+                - RIB
+    id:
+        rib:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            default: ''
+            id: true
+            column: RIB
+            generator:
+                strategy: IDENTITY
+    fields:
+        titre:
+            type: string
+            nullable: true
+            length: 4
+            fixed: false
+            column: TITRE
+        intitule:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            column: INTITULE
+        sigle:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            column: SIGLE
+        banque:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: BANQUE
+        agence:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: AGENCE
+        dtCreation:
+            type: string
+            nullable: true
+            length: 25
+            fixed: false
+            column: DT_CREATION
+        dtNais:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            column: DT_NAIS
+        gsm:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            column: GSM
+        mail:
+            type: string
+            nullable: true
+            length: 41
+            fixed: false
+            column: MAIL
+    lifecycleCallbacks: {  }
