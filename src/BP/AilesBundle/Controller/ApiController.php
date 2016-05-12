@@ -228,7 +228,7 @@ public function internationalNewsAction(){
         $doc->loadHTMLFile('http://www.femmesdumaroc.com/guide-pratique/sante');
         libxml_clear_errors(); 
         
-        $xp = new \DOMXPath($doc);
+        $xp = new \DOMXPath($doc); 
         $rows = $xp->query('//div[@class="columns small-12 art-single"]');
         $content = array();
         
