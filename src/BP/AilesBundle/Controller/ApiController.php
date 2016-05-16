@@ -460,18 +460,18 @@ public function internationalNewsAction(){
         $doc = new \DOMDocument();
         
         libxml_use_internal_errors(true);
-        $doc->loadHTMLFile('http://www.femmesdumaroc.com/mode/news-mode');
+        $doc->loadHTMLFile('http://www.journaldesfemmes.com/mode/actualites');
         libxml_clear_errors();  
         
         $xp = new \DOMXPath($doc);
-        $rows = $xp->query('//div[@class="columns small-12 art-single"]');
+        $rows = $xp->query('//div[@class="grid_line gutter grid--norwd"]');
         $content = array();
         foreach($rows as $row){
             
-            $content[] = array("url"=>"http://www.femmesdumaroc.com".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getAttribute("href"),
+            $content[] = array("url"=>"http://www.journaldesfemmes.com/".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getAttribute("href"),
                                 "img"=>"http://www.femmesdumaroc.com".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getElementsByTagName("img")->item(0)->getAttribute("src"),  
-                                "titre"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("h2")->item(0)->getElementsByTagName("a")->item(0)->nodeValue,
-                                "descr"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(1)->getElementsByTagName("h3")->item(0)->nodeValue
+                                "titre"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("h4")->item(0)->getElementsByTagName("a")->item(0)->nodeValue,
+                                "descr"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("p")->item(1)->nodeValue
                 
                     );
             }
