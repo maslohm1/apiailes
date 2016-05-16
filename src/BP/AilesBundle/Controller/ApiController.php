@@ -217,7 +217,7 @@ public function internationalNewsAction(){
         
         public function santeAction() {
             
-            header("Access-Control-Allow-Origin: *");
+           header("Access-Control-Allow-Origin: *");
         $doctrine = $this->getDoctrine();
         
         $response = array();
@@ -225,19 +225,18 @@ public function internationalNewsAction(){
         $doc = new \DOMDocument();
         
         libxml_use_internal_errors(true);
-        $doc->loadHTMLFile('http://www.femmesdumaroc.com/guide-pratique/sante');
-        libxml_clear_errors(); 
+        $doc->loadHTMLFile('http://sante.journaldesfemmes.com/actualites/');
+        libxml_clear_errors();  
         
-        $xp = new \DOMXPath($doc); 
-        $rows = $xp->query('//div[@class="columns small-12 art-single"]');
+        $xp = new \DOMXPath($doc);
+        $rows = $xp->query('//li[@class="jContents"]');
         $content = array();
-        
         foreach($rows as $row){
-            $img = "http://www.femmesdumaroc.com".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getElementsByTagName("img")->item(0)->getAttribute("src");
-            $content[] = array("url"=>"http://www.femmesdumaroc.com".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getAttribute("href"),
-                                "img"=>substr($img,0,-12),  
-                                "titre"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("h2")->item(0)->getElementsByTagName("a")->item(0)->nodeValue,
-                                "descr"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(1)->getElementsByTagName("h3")->item(0)->nodeValue
+             $img = $row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(0)->getAttribute("style");;
+            $content[] = array("url"=>"http://www.journaldesfemmes.com".$row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(0)->getAttribute("href"),
+                                 "img"=>substr($img,21,-1),
+                                "titre"=> $row->getElementsByTagName("div")->item(2)->getElementsByTagName("h4")->item(0)->getElementsByTagName("a")->item(0)->nodeValue,
+                                "descr"=>  $row->getElementsByTagName("div")->item(2)->getElementsByTagName("p")->item(0)->nodeValue
                 
                     );
             }
@@ -250,6 +249,7 @@ public function internationalNewsAction(){
         $response->setContent($responseJson);
         $response->headers->set('Content-Type', 'application/json');
         return $response;
+        
         
         }
         
@@ -384,18 +384,18 @@ public function internationalNewsAction(){
         $doc = new \DOMDocument();
         
         libxml_use_internal_errors(true);
-        $doc->loadHTMLFile('http://www.femmesdumaroc.com/beaute/pratique');
+        $doc->loadHTMLFile('http://www.journaldesfemmes.com/beaute/actualites/');
         libxml_clear_errors();  
         
         $xp = new \DOMXPath($doc);
-        $rows = $xp->query('//div[@class="columns small-12 art-single"]');
+        $rows = $xp->query('//li[@class="jContents"]');
         $content = array();
         foreach($rows as $row){
-            
-            $content[] = array("url"=>"http://www.femmesdumaroc.com".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getAttribute("href"),
-                                "img"=>"http://www.femmesdumaroc.com".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getElementsByTagName("img")->item(0)->getAttribute("src"),  
-                                "titre"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("h2")->item(0)->getElementsByTagName("a")->item(0)->nodeValue,
-                                "descr"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(1)->getElementsByTagName("h3")->item(0)->nodeValue
+             $img = $row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(0)->getAttribute("style");;
+            $content[] = array("url"=>"http://www.journaldesfemmes.com".$row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(0)->getAttribute("href"),
+                                 "img"=>substr($img,21,-1),
+                                "titre"=> $row->getElementsByTagName("div")->item(2)->getElementsByTagName("h4")->item(0)->getElementsByTagName("a")->item(0)->nodeValue,
+                                "descr"=>  $row->getElementsByTagName("div")->item(2)->getElementsByTagName("p")->item(0)->nodeValue
                 
                     );
             }
@@ -536,21 +536,20 @@ public function internationalNewsAction(){
         $doc = new \DOMDocument();
         
         libxml_use_internal_errors(true);
-        $doc->loadHTMLFile('http://www.femmesdumaroc.com/guide-pratique/cuisine');
+        $doc->loadHTMLFile('http://cuisine.journaldesfemmes.com/selection/');
         libxml_clear_errors();  
         
         $xp = new \DOMXPath($doc);
-        $rows = $xp->query('//div[@class="columns small-12 art-single"]');
+        $rows = $xp->query('//li[@class="jContents"]');
         $content = array();
         foreach($rows as $row){
-            
-            $content[] = array("url"=>"http://www.femmesdumaroc.com".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getAttribute("href"),
-                                "img"=>"http://www.femmesdumaroc.com".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getElementsByTagName("img")->item(0)->getAttribute("src"),  
-                                "titre"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("h2")->item(0)->getElementsByTagName("a")->item(0)->nodeValue,
-                                "descr"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(1)->getElementsByTagName("h3")->item(0)->nodeValue
+             $img = $row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(0)->getAttribute("style");;
+            $content[] = array("url"=>"http://www.journaldesfemmes.com".$row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(0)->getAttribute("href"),
+                                 "img"=>substr($img,21,-1),
+                                "titre"=> $row->getElementsByTagName("div")->item(2)->getElementsByTagName("h4")->item(0)->getElementsByTagName("a")->item(0)->nodeValue,
+                                "descr"=>  $row->getElementsByTagName("div")->item(2)->getElementsByTagName("p")->item(0)->nodeValue
                 
                     );
-            
             }
       
         $response = array("status"=>"OK","result"=>200,"content"=>$content);
