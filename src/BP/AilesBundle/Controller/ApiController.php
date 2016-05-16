@@ -450,7 +450,7 @@ public function internationalNewsAction(){
             
         }
         
-        public function modeAction() {
+         public function modeAction() {
             
             header("Access-Control-Allow-Origin: *");
         $doctrine = $this->getDoctrine();
@@ -464,14 +464,14 @@ public function internationalNewsAction(){
         libxml_clear_errors();  
         
         $xp = new \DOMXPath($doc);
-        $rows = $xp->query('//div[@class="grid_line gutter grid--norwd"]');
+        $rows = $xp->query('//li[@class="jContents"]');
         $content = array();
         foreach($rows as $row){
-            
-            $content[] = array("url"=>"http://www.journaldesfemmes.com/".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getAttribute("href"),
-                                "img"=>"http://www.femmesdumaroc.com".$row->getElementsByTagName("div")->item(0)->getElementsByTagName("a")->item(0)->getElementsByTagName("img")->item(0)->getAttribute("src"),  
-                                "titre"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("h4")->item(0)->getElementsByTagName("a")->item(0)->nodeValue,
-                                "descr"=>  $row->getElementsByTagName("div")->item(1)->getElementsByTagName("p")->item(1)->nodeValue
+             $img = $row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(0)->getAttribute("style");;
+            $content[] = array("url"=>"http://www.journaldesfemmes.com".$row->getElementsByTagName("div")->item(1)->getElementsByTagName("a")->item(0)->getAttribute("href"),
+                                 "img"=>substr($img,21,-1),
+                                "titre"=> $row->getElementsByTagName("div")->item(2)->getElementsByTagName("h4")->item(0)->getElementsByTagName("a")->item(0)->nodeValue,
+                                "descr"=>  $row->getElementsByTagName("div")->item(2)->getElementsByTagName("p")->item(0)->nodeValue
                 
                     );
             }
